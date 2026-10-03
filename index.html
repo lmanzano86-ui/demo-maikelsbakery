@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maikel's Florida Bakery — Tampa, FL</title>
+<meta name="description" content="Panadería cubana familiar en West Tampa desde hace más de 40 años. Pastelitos, sándwich cubano, café con leche y cakes de encargo.">
+<style>
+  :root{
+    --cream:#FFF9EE; --cream2:#F7EEDC; --gold:#D9A441; --gold-d:#B9862F;
+    --coffee:#4A2E1B; --coffee2:#2E1D11; --terra:#C05B2B; --ink:#3A2A1C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+  h1,h2,h3,.serif{font-family:Georgia,'Times New Roman',serif}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(46,29,17,.96);backdrop-filter:blur(6px);color:#FFF3DD}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+  .logo{font-family:Georgia,serif;font-size:1.35rem;letter-spacing:1px;font-weight:700}
+  .logo span{color:var(--gold)}
+  .navlinks{display:flex;gap:22px;align-items:center;font-size:.95rem}
+  .navlinks a{text-decoration:none;opacity:.92}
+  .navlinks a:hover{color:var(--gold)}
+  .lang{background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:20px;padding:5px 14px;cursor:pointer;font-weight:700;font-size:.85rem}
+  .btn{display:inline-block;background:var(--gold);color:var(--coffee2)!important;font-weight:800;text-decoration:none;border-radius:30px;padding:12px 28px;font-size:1rem;border:none;cursor:pointer;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px);background:var(--gold-d)}
+  .btn.ghost{background:transparent;border:2px solid var(--gold);color:var(--gold)!important}
+  .btn.dark{background:var(--coffee);color:#FFF3DD!important}
+  @media(max-width:720px){.navlinks a.hid{display:none}}
+  /* HERO */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#FFF8E8}
+  .hero .bg{position:absolute;inset:0;background:url('imgs/vitrina.jpg') center/cover}
+  .hero .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,18,9,.92) 8%,rgba(30,18,9,.25) 55%,rgba(30,18,9,.35))}
+  .hero .wrap{position:relative;padding:90px 20px 70px;width:100%}
+  .badge{display:inline-block;background:var(--gold);color:var(--coffee2);font-weight:800;font-size:.8rem;letter-spacing:2px;border-radius:20px;padding:6px 18px;margin-bottom:14px}
+  .hero h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.08;margin-bottom:12px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+  .hero p.lead{font-size:clamp(1.05rem,2.4vw,1.35rem);max-width:620px;margin-bottom:24px;color:#F7EEDC}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+  .stars{margin-top:18px;font-size:1rem;color:#F7EEDC}
+  .stars b{color:var(--gold)}
+  /* STRIP */
+  .strip{background:var(--coffee2);color:#F7EEDC;text-align:center;padding:16px 10px;font-size:.95rem;letter-spacing:.5px}
+  .strip b{color:var(--gold)}
+  /* SECTIONS */
+  section{padding:64px 0}
+  .kicker{color:var(--terra);font-weight:800;letter-spacing:3px;font-size:.8rem;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--coffee);margin-bottom:10px}
+  .sec-sub{color:#7a6a55;max-width:640px;margin-bottom:32px;font-size:1.05rem}
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(74,46,27,.12);transition:transform .2s}
+  .card:hover{transform:translateY(-5px)}
+  .card img{height:200px;width:100%;object-fit:cover}
+  .card .body{padding:20px}
+  .card h3{font-size:1.25rem;color:var(--coffee);margin-bottom:6px}
+  .card p{font-size:.95rem;color:#7a6a55}
+  .card .tag{display:inline-block;background:var(--cream2);color:var(--terra);font-size:.75rem;font-weight:800;letter-spacing:1px;border-radius:12px;padding:3px 12px;margin-bottom:10px}
+  /* CAKES */
+  .cakes{background:var(--coffee);color:#F7EEDC}
+  .cakes h2{color:#FFF3DD}
+  .cakes .sec-sub{color:#d9c9ab}
+  .cakes .grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  @media(max-width:760px){.cakes .grid2{grid-template-columns:1fr}}
+  .cakes img{border-radius:16px;box-shadow:0 12px 32px rgba(0,0,0,.35)}
+  .tick{list-style:none;margin:18px 0 26px}
+  .tick li{margin-bottom:10px;padding-left:30px;position:relative}
+  .tick li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:800;font-size:1.1rem}
+  /* STORY */
+  .story .grid2{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+  @media(max-width:760px){.story .grid2{grid-template-columns:1fr}}
+  .story img{border-radius:16px}
+  .big-num{font-family:Georgia,serif;font-size:3.2rem;color:var(--gold-d);font-weight:700;line-height:1}
+  /* VISIT */
+  .visit{background:var(--cream2)}
+  .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:10px}
+  .vcard{background:#fff;border-radius:14px;padding:26px;box-shadow:0 6px 18px rgba(74,46,27,.1)}
+  .vcard h3{color:var(--coffee);margin-bottom:10px;font-size:1.15rem}
+  .vcard p{font-size:.95rem;color:#6b5c48}
+  .vcard .qr{display:flex;gap:14px;margin-top:14px;align-items:center}
+  .vcard .qr img{width:86px;height:86px;border-radius:8px;border:2px solid var(--cream2)}
+  .vcard .qr small{font-size:.8rem;color:#8a7a62}
+  table.hours{width:100%;font-size:.92rem;border-collapse:collapse;margin-top:6px}
+  table.hours td{padding:5px 0;border-bottom:1px dashed #e3d5ba;color:#6b5c48}
+  table.hours td:last-child{text-align:right;font-weight:700;color:var(--coffee)}
+  /* FOOTER */
+  footer{background:var(--coffee2);color:#c9b78f;text-align:center;padding:34px 20px;font-size:.9rem;color:#c9b78f}
+  footer .logo{margin-bottom:8px}
+  .wa-float{position:fixed;bottom:22px;right:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.3);z-index:60}
+  .wa-float svg{width:32px;height:32px;fill:#fff}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">MAIKEL'S <span>FLORIDA BAKERY</span></div>
+    <div class="navlinks">
+      <a class="hid" href="#especialidades" data-es="Especialidades" data-en="Specialties">Especialidades</a>
+      <a class="hid" href="#cakes" data-es="Cakes" data-en="Cakes">Cakes</a>
+      <a class="hid" href="#visitanos" data-es="Visítanos" data-en="Visit us">Visítanos</a>
+      <button class="lang" onclick="toggleLang()">EN</button>
+      <a class="btn" style="padding:8px 20px" href="tel:+18138700756">📞 <span data-es="Llamar" data-en="Call">Llamar</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="bg"></div><div class="shade"></div>
+  <div class="wrap">
+    <div class="badge" data-es="DESDE HACE MÁS DE 40 AÑOS" data-en="FOR OVER 40 YEARS">DESDE HACE MÁS DE 40 AÑOS</div>
+    <h1 data-es="El sabor cubano de West Tampa, recién horneado cada mañana" data-en="West Tampa's Cuban flavor, fresh-baked every morning">El sabor cubano de West Tampa, recién horneado cada mañana</h1>
+    <p class="lead" data-es="Pastelitos, sándwich cubano, café con leche y cakes de encargo para tus momentos especiales. Una panadería familiar de verdad." data-en="Pastelitos, Cuban sandwiches, café con leche and custom cakes for your special moments. A truly family-owned bakery.">Pastelitos, sándwich cubano, café con leche y cakes de encargo para tus momentos especiales. Una panadería familiar de verdad.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/18138700756?text=Hola%20Maikel's%20Florida%20Bakery%2C%20quiero%20hacer%20un%20pedido" target="_blank" data-es="💬 Pedir por WhatsApp" data-en="💬 Order on WhatsApp">💬 Pedir por WhatsApp</a>
+      <a class="btn ghost" href="http://floridabakerytampa.com/menu.php" target="_blank" data-es="Ver menú" data-en="See menu">Ver menú</a>
+    </div>
+    <div class="stars">★ <b>4.3</b> <span data-es="en Google · +1,100 reseñas" data-en="on Google · 1,100+ reviews">en Google · +1,100 reseñas</span></div>
+  </div>
+</header>
+
+<div class="strip" data-es="ABIERTO LOS 7 DÍAS · <b>LUN–SÁB 5 AM–6 PM</b> · <b>DOM 5 AM–5 PM</b> · 3320 W COLUMBUS DR, TAMPA" data-en="OPEN 7 DAYS · <b>MON–SAT 5 AM–6 PM</b> · <b>SUN 5 AM–5 PM</b> · 3320 W COLUMBUS DR, TAMPA">ABIERTO LOS 7 DÍAS · <b>LUN–SÁB 5 AM–6 PM</b> · <b>DOM 5 AM–5 PM</b> · 3320 W COLUMBUS DR, TAMPA</div>
+
+<section id="especialidades">
+  <div class="wrap">
+    <div class="kicker" data-es="Nuestras especialidades" data-en="Our specialties">Nuestras especialidades</div>
+    <h2 data-es="Lo que nos hizo famosos" data-en="What made us famous">Lo que nos hizo famosos</h2>
+    <p class="sec-sub" data-es="Recetas cubanas traídas de la isla, horneadas aquí en West Tampa todos los días." data-en="Cuban recipes brought from the island, baked here in West Tampa every day.">Recetas cubanas traídas de la isla, horneadas aquí en West Tampa todos los días.</p>
+    <div class="grid">
+      <div class="card">
+        <img src="imgs/pastel.jpg" alt="Pastelitos">
+        <div class="body">
+          <div class="tag" data-es="EL FAVORITO" data-en="THE FAVORITE">EL FAVORITO</div>
+          <h3 data-es="Pastelitos" data-en="Pastelitos">Pastelitos</h3>
+          <p data-es="De guayaba, queso, guayaba con queso, carne y más. El desayuno cubano de verdad." data-en="Guava, cheese, guava & cheese, beef and more. The real Cuban breakfast.">De guayaba, queso, guayaba con queso, carne y más. El desayuno cubano de verdad.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imgs/sandwich.jpg" alt="Sándwich cubano">
+        <div class="body">
+          <div class="tag" data-es="CLÁSICO" data-en="CLASSIC">CLÁSICO</div>
+          <h3 data-es="Sándwich Cubano" data-en="Cuban Sandwich">Sándwich Cubano</h3>
+          <p data-es="Prensado en pan cubano fresco, con lechón, jamón, queso suizo y mostaza." data-en="Pressed on fresh Cuban bread, with roast pork, ham, Swiss cheese and mustard.">Prensado en pan cubano fresco, con lechón, jamón, queso suizo y mostaza.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imgs/cakes.jpg" alt="Cakes de encargo">
+        <div class="body">
+          <div class="tag" data-es="DE ENCARGO" data-en="CUSTOM">DE ENCARGO</div>
+          <h3 data-es="Cakes de Encargo" data-en="Custom Cakes">Cakes de Encargo</h3>
+          <p data-es="Tres leches y cakes de 3 capas con rellenos tropicales: guayaba, piña, coco y más." data-en="Tres leches and 3-layer cakes with tropical fillings: guava, pineapple, coconut and more.">Tres leches y cakes de 3 capas con rellenos tropicales: guayaba, piña, coco y más.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="imgs/cafe.jpg" alt="Café con leche">
+        <div class="body">
+          <div class="tag" data-es="IMPRESCINDIBLE" data-en="A MUST">IMPRESCINDIBLE</div>
+          <h3 data-es="Café con Leche" data-en="Café con Leche">Café con Leche</h3>
+          <p data-es="Cortadito, colada o café con leche bien cargado. Nada como empezar el día así." data-en="Cortadito, colada or a strong café con leche. No better way to start the day.">Cortadito, colada o café con leche bien cargado. Nada como empezar el día así.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cakes" class="cakes">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--gold)" data-es="Cakes de encargo" data-en="Custom cakes">Cakes de encargo</div>
+    <h2 data-es="Tu celebración merece un cake de verdad" data-en="Your celebration deserves a real cake">Tu celebración merece un cake de verdad</h2>
+    <div class="grid2">
+      <div>
+        <p class="sec-sub" data-es="Bodas, quinceañeras, cumpleaños, bautizos y ocasiones especiales. Decorados a tu gusto con nuestro merengue esponjoso." data-en="Weddings, quinceañeras, birthdays, baptisms and special occasions. Decorated your way with our fluffy meringue frosting.">Bodas, quinceañeras, cumpleaños, bautizos y ocasiones especiales. Decorados a tu gusto con nuestro merengue esponjoso.</p>
+        <ul class="tick">
+          <li data-es="3 capas con rellenos tropicales: guayaba, piña, crema de vainilla, coco" data-en="3 layers with tropical fillings: guava, pineapple, vanilla custard, coconut">3 capas con rellenos tropicales: guayaba, piña, crema de vainilla, coco</li>
+          <li data-es="Bañados en nuestra salsa secreta que los mantiene húmedos y deliciosos" data-en="Soaked in our secret syrup that keeps them moist and delicious">Bañados en nuestra salsa secreta que los mantiene húmedos y deliciosos</li>
+          <li data-es="También ofrecemos catering para tus eventos" data-en="Catering also available for your events">También ofrecemos catering para tus eventos</li>
+        </ul>
+        <a class="btn" href="https://wa.me/18138700756?text=Hola%2C%20quiero%20cotizar%20un%20cake%20de%20encargo" target="_blank" data-es="🎂 Cotiza tu cake por WhatsApp" data-en="🎂 Get a cake quote on WhatsApp">🎂 Cotiza tu cake por WhatsApp</a>
+      </div>
+      <div><img src="imgs/cakes.jpg" alt="Cakes decorados de encargo"></div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="grid2">
+      <div><img src="imgs/vitrina.jpg" alt="Vitrina de Maikel's Florida Bakery"></div>
+      <div>
+        <div class="kicker" data-es="Nuestra historia" data-en="Our story">Nuestra historia</div>
+        <h2 data-es="Una familia, una tradición" data-en="One family, one tradition">Una familia, una tradición</h2>
+        <p class="sec-sub" data-es="Por más de 40 años hemos sido un negocio familiar en el corazón de West Tampa, donde florece la cultura latina. Continuamos la tradición cubana con recetas traídas de Cuba y Europa." data-en="For over 40 years we have been a family business in the heart of West Tampa, where Latin culture flourishes. We carry on the Cuban tradition with recipes brought from Cuba and Europe.">Por más de 40 años hemos sido un negocio familiar en el corazón de West Tampa, donde florece la cultura latina. Continuamos la tradición cubana con recetas traídas de Cuba y Europa.</p>
+        <div style="display:flex;gap:36px;margin-top:8px">
+          <div><div class="big-num">40+</div><div style="font-size:.9rem;color:#7a6a55" data-es="años de tradición" data-en="years of tradition">años de tradición</div></div>
+          <div><div class="big-num">1.1K</div><div style="font-size:.9rem;color:#7a6a55" data-es="reseñas en Google" data-en="Google reviews">reseñas en Google</div></div>
+          <div><div class="big-num">7</div><div style="font-size:.9rem;color:#7a6a55" data-es="días a la semana" data-en="days a week">días a la semana</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="visitanos" class="visit">
+  <div class="wrap">
+    <div class="kicker" data-es="Visítanos" data-en="Visit us">Visítanos</div>
+    <h2 data-es="Pasa por tu desayuno" data-en="Stop by for breakfast">Pasa por tu desayuno</h2>
+    <div class="vgrid">
+      <div class="vcard">
+        <h3>📍 <span data-es="Dirección" data-en="Address">Dirección</span></h3>
+        <p>3320 W Columbus Dr<br>Tampa, FL 33607</p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn dark" style="padding:10px 22px;font-size:.9rem" href="https://www.google.com/maps/search/?api=1&query=Maikel%27s+Florida+Bakery+3320+W+Columbus+Dr+Tampa+FL+33607" target="_blank" data-es="Cómo llegar" data-en="Get directions">Cómo llegar</a>
+        </div>
+        <div class="qr"><img src="qr/qr-maps.png" alt="QR mapa"><small data-es="Escanea para abrir el mapa" data-en="Scan to open the map">Escanea para abrir el mapa</small></div>
+      </div>
+      <div class="vcard">
+        <h3>🕐 <span data-es="Horario" data-en="Hours">Horario</span></h3>
+        <table class="hours">
+          <tr><td data-es="Lunes – Sábado" data-en="Monday – Saturday">Lunes – Sábado</td><td>5 AM – 6 PM</td></tr>
+          <tr><td data-es="Domingo" data-en="Sunday">Domingo</td><td>5 AM – 5 PM</td></tr>
+        </table>
+        <div class="qr"><img src="qr/qr-review.png" alt="QR reseña"><small data-es="¿Te gustó? Déjanos tu reseña" data-en="Liked us? Leave a review">¿Te gustó? Déjanos tu reseña</small></div>
+      </div>
+      <div class="vcard">
+        <h3>📞 <span data-es="Contacto" data-en="Contact">Contacto</span></h3>
+        <p><a href="tel:+18138700756" style="font-weight:800;color:var(--coffee);text-decoration:none">(813) 870-0756</a></p>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" style="padding:10px 22px;font-size:.9rem" href="tel:+18138700756" data-es="Llamar" data-en="Call">Llamar</a>
+          <a class="btn dark" style="padding:10px 22px;font-size:.9rem" href="https://wa.me/18138700756" target="_blank">WhatsApp</a>
+        </div>
+        <div class="qr"><img src="qr/qr-web.png" alt="QR página web"><small data-es="Escanea para guardar esta página" data-en="Scan to save this page">Escanea para guardar esta página</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">MAIKEL'S <span>FLORIDA BAKERY</span></div>
+  <div>3320 W Columbus Dr, Tampa, FL 33607 · (813) 870-0756</div>
+  <div style="margin-top:6px;opacity:.7" data-es="Demo de muestra — precios y fotos sujetos a confirmación del negocio" data-en="Sample demo — prices and photos subject to business confirmation">Demo de muestra — precios y fotos sujetos a confirmación del negocio</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/18138700756?text=Hola%20Maikel's%20Florida%20Bakery%2C%20quiero%20hacer%20un%20pedido" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.4.7 4.6 1.9 6.5L4 29l7.7-1.9c1.8 1 3.9 1.6 6.1 1.6 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-4.5 1.1 1.2-4.4-.3-.4c-1-1.6-1.6-3.5-1.6-5.5C5.1 9.4 10.1 4.9 16 4.9S26.9 9.9 26.9 15.9 21.9 24.8 16 24.8zm5.4-8.1c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.8-1-2.4-.3-.6-.5-.5-.7-.6h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.4c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.8.7.8.2 1.5.2 2 .1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.2-.6-.4z"/></svg>
+</a>
+
+<script>
+let lang='es';
+function toggleLang(){
+  lang = lang==='es' ? 'en' : 'es';
+  document.querySelectorAll('[data-es]').forEach(el=>{
+    el.innerHTML = el.dataset[lang];
+  });
+  document.querySelector('.lang').textContent = lang==='es' ? 'EN' : 'ES';
+  document.documentElement.lang = lang;
+}
+</script>
+</body>
+</html>
